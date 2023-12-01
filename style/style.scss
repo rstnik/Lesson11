@@ -1,123 +1,316 @@
-@import './colors.scss';
-@import './mixins.scss';
-@import './fonts.scss';
+@import "./colors.scss";
+@import "./mixins.scss";
+@import "./fonts.scss";
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: $font;
-    font-size: 20px;
-    font-weight: $regular;
-    border: none;
-    background: transparent;
-    list-style-type: none;
-    text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  font-size: 20px;
+  font-weight: $regular;
+  border: none;
+  background: transparent;
+  list-style-type: none;
+  text-decoration: none;
 }
 
-.btn{
-    padding: 15px 35px;
-    border: 2px solid $darkOpacity;
-    font-weight: $semibold;
-    font-size: 16px;
-    &-orange{
-        background-color: $orange;
-        border: 2px solid $orange;
-        color: $white;
-    }
-    &dark{
-        background-color: $dark;
-        border: 2px solid $dark;
-        color: $white;
-    }
+.btn {
+  padding: 15px 35px;
+  border: 1px solid $darkOpacity;
+  @include GraphikBold($dark,16px,none);
+  &-orange {
+    background-color: $orange;
+    border: 1px solid $orange;
+    color: $white;
+  }
+  &-dark {
+    background-color: $dark;
+    border: 1px solid $dark;
+    color: $white;
+  }
 }
 
-.container{
-    padding: 0 75px;
-    @include flex(none,center,0);
+.header {
+  @include flex(space-around, center, 0);
+  border-bottom: 1px solid $gray;
+  .logo__nav {
+    @include flex(center, center, 51px);
+    .nav {
+      .menu {
+        @include flex(center, center, 17px);
+        &-item {
+          padding: 37px 20px;
+        }
+      }
+    }
+  }
+  .buttons {
+    @include flex(center, center, 10px);
+  }
+}
+
+.promo {
+  padding: 43px 75px;
+  display: grid;
+  grid-template: repeat(20, 30px) / repeat(20, 1fr);
+  h1 {
+    @include GraphikBold($dark,65px,70px);
+    grid-area: 1/1/7/7;
+    display: inline-grid;
+  }
+  &-text {
+    @include GraphikReg($dark,25px,35px);
+    grid-area: 10/1/13/6;
+    display: inline-grid;
+  }
+  span {
+    @include GraphikReg($dark,15px,25px);
+    grid-area: 19/1/20/5;
+    display: inline-grid;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    grid-area: 16/1/18/5;
+    > .btn {
+      padding: 20px 35px;
+    }
+  }
+  img{
+    grid-area: 3/12/21/21;
+  }
+}
+
+.brands {
+  background-color: $orange-light;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 80px;
+  padding: 96px 0;
+  &-title {
+    grid-area: 1/1/1/7;
+    @include flex(center, none, none);
+    &-text {
+      width: 60%;
+      text-align: center;
+      @include GraphikBold($dark,50px,60px);
+    }
+  }
+}
+
+.benefits {
+  display: grid;
+  grid-template: repeat(4, 1fr) / 0fr 0fr;
+  padding: 100px 75px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 250px;
+  column-gap: 150px;
+  &-text {
+    @include flex(flex-start, flex-start, 30px);
     flex-direction: column;
+    .title {
+      @include GraphikBold($dark,50px,60px);
+      width: 80%;
+    }
+    .subtitle {
+      @include GraphikReg($dark,20px,30px);
+      width: 81%;
+    }
+    .link {
+      @include GraphikBold($dark,20px,30px);
+    }
+  }
+  .benefits-gif {
+    .gif {
+      width: 632px;
+      height: 632px;
+    }
+  }
 }
 
-.header{
-    @include flex(space-around,center,0);
-    border-bottom: 1px solid $gray;
-    .logo__nav{
-        @include flex(center,center,51px);
-        .nav {
-            .menu{
-                @include flex(center, center, 17px);
-                &-item{
-                    padding: 37px 20px;
-                }
-            }
-        }
+.localize {
+  background-color: $soft-white;
+  padding: 110px 75px;
+  display: grid;
+  grid-template: repeat(3, 0fr) / repeat(3, 1fr);
+  justify-items: center;
+  row-gap: 78px;
+  &-title {
+    @include GraphikBold($dark,50px,60px);
+    text-align: center;
+    align-self: center;
+    grid-area: 1/1/1/4;
+  }
+  .card {
+    @include flex(center, center, 25px);
+    flex-direction: column;
+    width: 50%;
+    &-title {
+      @include GraphikBold($dark,25px,none);
     }
-    .buttons{
-        @include flex(center,center,10px);
+    &-subtitle {
+      @include GraphikReg($dark,18px,25px);
+      text-align: center;
     }
+  }
 }
 
-.promo{
-    @include flex(center,center,0);
-    padding: 150px 0;
-    .cta{
-        @include flex(none,none,50px);
-        flex-direction: column;
-        .info{
-            @include flex(none,center,51px);
-            flex-direction: column;
-            &-title{
-                width: 57%;
-                align-self: self-start;
-                @include Graphik($dark,65px,$semibold);
-                line-height: 70px;
-            }
-            &-subtitle{
-                width: 42%;
-                align-self: self-start;
-                @include Graphik($dark,25px,$regular);
-                line-height: 35px;
-            }
-        }
-        .buttons__text{
-            @include flex(center,flex-start,25px);
-            flex-direction: column;
-            .buttons{
-                @include flex(flex-start,center,10px);
-                > .btn{
-                    padding: 25px 40px;
-                }
-            }
-            .subbuttons__text{
-                .text{
-                    @include Graphik($dark,15px,$regular);
-                }
-            }
-        }
-        
+.boost {
+  padding: 150px 0;
+  &-title {
+    @include GraphikBold($dark,60px,60px);
+    margin-bottom: 90px;
+    margin-left: 145px;
+  }
+  .cards {
+    @include flex(space-around, center, 0);
+    .card {
+      width: 20%;
+      @include flex(center, flex-start, 40px);
+      flex-direction: column;
+      &-img {
+        height: 200px;
+      }
+      &-title {
+        @include GraphikBold($dark,30px,40px);
+      }
+      &-text {
+        @include GraphikReg($dark,20px,30px);
+      }
+      &-link {
+        text-decoration: underline;
+      }
     }
-    .img{
+  }
+}
+
+.edward {
+  background-color: $blue;
+  padding: 50px 0;
+  @include flex(space-around, center, 0);
+  &-info {
+    width: 42%;
+    .text {
+      @include GraphikReg($dark,30px,40px);
+      margin-bottom: 20px;
+    }
+    .subtext {
+      @include GraphikReg($dark,15px,25px);
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.cake {
+  background-color: $brown;
+  @include flex(space-around, center, 0);
+  padding: 90px 0;
+  &-title {
+    @include GraphikBold($dark,35px,50px);
+    width: 32%;
+    text-align: center;
+  }
+  .rating {
+    @include flex(center, center, 70px);
+    border-left: 1px solid $dark;
+    padding: 70px 70px;
+  }
+}
+
+.integrate {
+  @include flex(center, center, 40px);
+  flex-direction: column;
+  padding: 165px 0;
+  &-title {
+    @include GraphikBold($dark,65px,75px);
+    width: 40%;
+    text-align: center;
+  }
+  &-subtitle {
+    @include GraphikReg($dark,25px,30px);
+    width: 27%;
+    text-align: center;
+  }
+  > .btn {
+    padding: 25px 35px;
+  }
+}
+
+.localization {
+  background-color: $orange-light;
+  @include flex(center, center, 50px);
+  padding-top: 119px;
+  padding-bottom: 161px;
+  flex-direction: column;
+  &-title {
+    @include GraphikBold($dark,65px,75px);
+    text-align: center;
+    width: 40%;
+  }
+  &-subtitle {
+    @include GraphikReg($dark,20px,30px);
+    text-align: center;
+  }
+}
+
+.footer {
+  .first {
+    @include flex(center, flex-start, 0);
+    padding: 95px 0;
+    &-info {
+      @include flex(center, flex-start, 25px);
+      flex-direction: column;
+      > .title {
+        @include GraphikBold($dark,40px,50px);
+      }
+      > .text {
+        @include GraphikReg($dark,20px,30px);
         width: 50%;
+      }
+      > .link {
+        @include GraphikBold($dark,20px,30px);
+      }
     }
-}
-
-.brands{
-    background-color: $orange-light;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    gap: 80px;
-    padding: 96px 0;
-    &-title{
-        grid-area: 1/1/1/7;
-        @include flex(center,none,none);
-        &-text{
-            width: 60%;
-            text-align: center;
-            @include Graphik($dark,50px,$semibold);
-            line-height: 60px;
+    &-nav {
+      @include flex(center, flex-start, 200px);
+      .column {
+        > .title {
+          @include GraphikBold($dark,20px,25px);
+          margin-bottom: 21px;
+          margin-left: 15px;
         }
+        > .menu {
+          @include flex(center, flex-start, 5px);
+          flex-direction: column;
+          .menu-item {
+            @include GraphikReg($dark,15px,15px);
+            padding: 10px 15px;
+          }
+        }
+      }
     }
-
+  }
+  .second {
+    padding: 52px 0;
+    margin: 0 72px;
+    @include flex(space-between, center, 0px);
+    border-top: 1px solid $dark;
+    .brand {
+      @include flex(center, center, 15px);
+      &-text {
+        @include GraphikReg($dark,12px,15px);
+      }
+    }
+    .rights {
+      margin-right: 76px;
+      &-text {
+        @include GraphikReg($dark,12px,15px);
+      }
+    }
+  }
 }

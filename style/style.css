@@ -9,7 +9,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Graphik Reg", sans-serif;
+  font-family: "Graphik Reg";
   font-size: 20px;
   font-weight: 400;
   border: none;
@@ -20,28 +20,22 @@
 
 .btn {
   padding: 15px 35px;
-  border: 2px solid rgba(0, 0, 0, 0.5);
-  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  font-family: "Graphik Bold";
+  color: #000;
   font-size: 16px;
+  line-height: none;
+  font-weight: 600;
 }
 .btn-orange {
   background-color: #FF6336;
-  border: 2px solid #FF6336;
+  border: 1px solid #FF6336;
   color: #fff;
 }
-.btndark {
+.btn-dark {
   background-color: #000;
-  border: 2px solid #000;
+  border: 1px solid #000;
   color: #fff;
-}
-
-.container {
-  padding: 0 75px;
-  display: flex;
-  justify-content: none;
-  align-items: center;
-  gap: 0;
-  flex-direction: column;
 }
 
 .header {
@@ -74,68 +68,47 @@
 }
 
 .promo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  padding: 150px 0;
+  padding: 43px 75px;
+  display: grid;
+  grid-template: repeat(20, 30px)/repeat(20, 1fr);
 }
-.promo .cta {
-  display: flex;
-  justify-content: none;
-  align-items: none;
-  gap: 50px;
-  flex-direction: column;
-}
-.promo .cta .info {
-  display: flex;
-  justify-content: none;
-  align-items: center;
-  gap: 51px;
-  flex-direction: column;
-}
-.promo .cta .info-title {
-  width: 57%;
-  align-self: self-start;
-  font-family: "Graphik Reg", sans-serif;
+.promo h1 {
+  font-family: "Graphik Bold";
   color: #000;
   font-size: 65px;
-  font-weight: 600;
   line-height: 70px;
+  font-weight: 600;
+  grid-area: 1/1/7/7;
+  display: inline-grid;
 }
-.promo .cta .info-subtitle {
-  width: 42%;
-  align-self: self-start;
-  font-family: "Graphik Reg", sans-serif;
+.promo-text {
+  font-family: "Graphik Reg";
   color: #000;
   font-size: 25px;
-  font-weight: 400;
   line-height: 35px;
+  font-weight: 400;
+  grid-area: 10/1/13/6;
+  display: inline-grid;
 }
-.promo .cta .buttons__text {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 25px;
-  flex-direction: column;
-}
-.promo .cta .buttons__text .buttons {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-}
-.promo .cta .buttons__text .buttons > .btn {
-  padding: 25px 40px;
-}
-.promo .cta .buttons__text .subbuttons__text .text {
-  font-family: "Graphik Reg", sans-serif;
+.promo span {
+  font-family: "Graphik Reg";
   color: #000;
   font-size: 15px;
+  line-height: 25px;
   font-weight: 400;
+  grid-area: 19/1/20/5;
+  display: inline-grid;
 }
-.promo .img {
-  width: 50%;
+.promo .buttons {
+  display: flex;
+  gap: 10px;
+  grid-area: 16/1/18/5;
+}
+.promo .buttons > .btn {
+  padding: 20px 35px;
+}
+.promo img {
+  grid-area: 3/12/21/21;
 }
 
 .brands {
@@ -158,9 +131,354 @@
 .brands-title-text {
   width: 60%;
   text-align: center;
-  font-family: "Graphik Reg", sans-serif;
+  font-family: "Graphik Bold";
   color: #000;
   font-size: 50px;
-  font-weight: 600;
   line-height: 60px;
+  font-weight: 600;
+}
+
+.benefits {
+  display: grid;
+  grid-template: repeat(4, 1fr)/0fr 0fr;
+  padding: 100px 75px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 250px;
+  -moz-column-gap: 150px;
+       column-gap: 150px;
+}
+.benefits-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  flex-direction: column;
+}
+.benefits-text .title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 600;
+  width: 80%;
+}
+.benefits-text .subtitle {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  width: 81%;
+}
+.benefits-text .link {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+}
+.benefits .benefits-gif .gif {
+  width: 632px;
+  height: 632px;
+}
+
+.localize {
+  background-color: #FFF8E4;
+  padding: 110px 75px;
+  display: grid;
+  grid-template: repeat(3, 0fr)/repeat(3, 1fr);
+  justify-items: center;
+  row-gap: 78px;
+}
+.localize-title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 600;
+  text-align: center;
+  align-self: center;
+  grid-area: 1/1/1/4;
+}
+.localize .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-direction: column;
+  width: 50%;
+}
+.localize .card-title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 25px;
+  line-height: none;
+  font-weight: 600;
+}
+.localize .card-subtitle {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.boost {
+  padding: 150px 0;
+}
+.boost-title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 600;
+  margin-bottom: 90px;
+  margin-left: 145px;
+}
+.boost .cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+}
+.boost .cards .card {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-direction: column;
+}
+.boost .cards .card-img {
+  height: 200px;
+}
+.boost .cards .card-title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 600;
+}
+.boost .cards .card-text {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+.boost .cards .card-link {
+  text-decoration: underline;
+}
+
+.edward {
+  background-color: #C9E8F2;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+}
+.edward-info {
+  width: 42%;
+}
+.edward-info .text {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.edward-info .subtext {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.cake {
+  background-color: #DABC98;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+  padding: 90px 0;
+}
+.cake-title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: 600;
+  width: 32%;
+  text-align: center;
+}
+.cake .rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  border-left: 1px solid #000;
+  padding: 70px 70px;
+}
+
+.integrate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-direction: column;
+  padding: 165px 0;
+}
+.integrate-title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 65px;
+  line-height: 75px;
+  font-weight: 600;
+  width: 40%;
+  text-align: center;
+}
+.integrate-subtitle {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 400;
+  width: 27%;
+  text-align: center;
+}
+.integrate > .btn {
+  padding: 25px 35px;
+}
+
+.localization {
+  background-color: #FF9C7D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-top: 119px;
+  padding-bottom: 161px;
+  flex-direction: column;
+}
+.localization-title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 65px;
+  line-height: 75px;
+  font-weight: 600;
+  text-align: center;
+  width: 40%;
+}
+.localization-subtitle {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.footer .first {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  padding: 95px 0;
+}
+.footer .first-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  flex-direction: column;
+}
+.footer .first-info > .title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 600;
+}
+.footer .first-info > .text {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  width: 50%;
+}
+.footer .first-info > .link {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+}
+.footer .first-nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 200px;
+}
+.footer .first-nav .column > .title {
+  font-family: "Graphik Bold";
+  color: #000;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 600;
+  margin-bottom: 21px;
+  margin-left: 15px;
+}
+.footer .first-nav .column > .menu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  flex-direction: column;
+}
+.footer .first-nav .column > .menu .menu-item {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 400;
+  padding: 10px 15px;
+}
+.footer .second {
+  padding: 52px 0;
+  margin: 0 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  border-top: 1px solid #000;
+}
+.footer .second .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.footer .second .brand-text {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+}
+.footer .second .rights {
+  margin-right: 76px;
+}
+.footer .second .rights-text {
+  font-family: "Graphik Reg";
+  color: #000;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
 }/*# sourceMappingURL=style.css.map */
