@@ -68,7 +68,8 @@
 }
 
 .promo {
-  padding: 43px 75px;
+  padding: 43px 0;
+  width: 100%;
   display: grid;
   grid-template: repeat(20, 30px)/repeat(20, 1fr);
 }
@@ -78,7 +79,7 @@
   font-size: 65px;
   line-height: 70px;
   font-weight: 600;
-  grid-area: 1/1/7/7;
+  grid-area: 1/2/8/11;
   display: inline-grid;
 }
 .promo-text {
@@ -87,7 +88,7 @@
   font-size: 25px;
   line-height: 35px;
   font-weight: 400;
-  grid-area: 10/1/13/6;
+  grid-area: 9/2/14/10;
   display: inline-grid;
 }
 .promo span {
@@ -96,19 +97,19 @@
   font-size: 15px;
   line-height: 25px;
   font-weight: 400;
-  grid-area: 19/1/20/5;
+  grid-area: 19/2/20/8;
   display: inline-grid;
 }
 .promo .buttons {
   display: flex;
   gap: 10px;
-  grid-area: 16/1/18/5;
+  grid-area: 16/2/18/7;
 }
 .promo .buttons > .btn {
   padding: 20px 35px;
 }
 .promo img {
-  grid-area: 3/12/21/21;
+  grid-area: 3/10/21/21;
 }
 
 .brands {
@@ -141,12 +142,12 @@
 .benefits {
   display: grid;
   grid-template: repeat(4, 1fr)/0fr 0fr;
-  padding: 100px 75px;
+  padding: 100px 0;
   justify-content: center;
   align-items: center;
-  row-gap: 250px;
-  -moz-column-gap: 150px;
-       column-gap: 150px;
+  row-gap: 200px;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
 }
 .benefits-text {
   display: flex;
@@ -161,7 +162,6 @@
   font-size: 50px;
   line-height: 60px;
   font-weight: 600;
-  width: 80%;
 }
 .benefits-text .subtitle {
   font-family: "Graphik Reg";
@@ -169,7 +169,6 @@
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
-  width: 81%;
 }
 .benefits-text .link {
   font-family: "Graphik Bold";
@@ -179,17 +178,21 @@
   font-weight: 600;
 }
 .benefits .benefits-gif .gif {
-  width: 632px;
-  height: 632px;
+  min-width: 632px;
+  min-height: 632px;
+  width: 100%;
+  height: 100%;
 }
 
 .localize {
   background-color: #FFF8E4;
-  padding: 110px 75px;
+  padding: 110px 0;
   display: grid;
   grid-template: repeat(3, 0fr)/repeat(3, 1fr);
   justify-items: center;
   row-gap: 78px;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
 }
 .localize-title {
   font-family: "Graphik Bold";
@@ -207,7 +210,6 @@
   align-items: center;
   gap: 25px;
   flex-direction: column;
-  width: 50%;
 }
 .localize .card-title {
   font-family: "Graphik Bold";
@@ -226,25 +228,26 @@
 }
 
 .boost {
-  padding: 150px 0;
+  padding: 120px 0;
 }
 .boost-title {
   font-family: "Graphik Bold";
   color: #000;
-  font-size: 60px;
+  font-size: 50px;
   line-height: 60px;
   font-weight: 600;
   margin-bottom: 90px;
-  margin-left: 145px;
+  text-align: center;
 }
 .boost .cards {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 0;
+  width: 100%;
 }
 .boost .cards .card {
-  width: 20%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -280,9 +283,6 @@
   align-items: center;
   gap: 0;
 }
-.edward-info {
-  width: 42%;
-}
 .edward-info .text {
   font-family: "Graphik Reg";
   color: #000;
@@ -307,6 +307,7 @@
   align-items: center;
   gap: 0;
   padding: 90px 0;
+  width: 100%;
 }
 .cake-title {
   font-family: "Graphik Bold";
@@ -314,8 +315,6 @@
   font-size: 35px;
   line-height: 50px;
   font-weight: 600;
-  width: 32%;
-  text-align: center;
 }
 .cake .rating {
   display: flex;
@@ -332,7 +331,7 @@
   align-items: center;
   gap: 40px;
   flex-direction: column;
-  padding: 165px 0;
+  padding: 120px 0;
 }
 .integrate-title {
   font-family: "Graphik Bold";
@@ -340,7 +339,6 @@
   font-size: 65px;
   line-height: 75px;
   font-weight: 600;
-  width: 40%;
   text-align: center;
 }
 .integrate-subtitle {
@@ -349,7 +347,6 @@
   font-size: 25px;
   line-height: 30px;
   font-weight: 400;
-  width: 27%;
   text-align: center;
 }
 .integrate > .btn {
@@ -361,9 +358,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-  padding-top: 119px;
-  padding-bottom: 161px;
+  gap: 0px;
+  padding: 140px 0;
   flex-direction: column;
 }
 .localization-title {
@@ -373,7 +369,7 @@
   line-height: 75px;
   font-weight: 600;
   text-align: center;
-  width: 40%;
+  margin-bottom: 29px;
 }
 .localization-subtitle {
   font-family: "Graphik Reg";
@@ -381,12 +377,12 @@
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
-  text-align: center;
+  margin-bottom: 54px;
 }
 
 .footer .first {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 0;
   padding: 95px 0;
@@ -411,7 +407,6 @@
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
-  width: 50%;
 }
 .footer .first-info > .link {
   font-family: "Graphik Bold";
@@ -422,9 +417,10 @@
 }
 .footer .first-nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 200px;
+  gap: 0;
+  width: 60%;
 }
 .footer .first-nav .column > .title {
   font-family: "Graphik Bold";

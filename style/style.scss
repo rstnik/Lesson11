@@ -17,7 +17,7 @@
 .btn {
   padding: 15px 35px;
   border: 1px solid $darkOpacity;
-  @include GraphikBold($dark,16px,none);
+  @include GraphikBold($dark, 16px, none);
   &-orange {
     background-color: $orange;
     border: 1px solid $orange;
@@ -50,35 +50,36 @@
 }
 
 .promo {
-  padding: 43px 75px;
+  padding: 43px 0;
+  width: 100%;
   display: grid;
   grid-template: repeat(20, 30px) / repeat(20, 1fr);
   h1 {
-    @include GraphikBold($dark,65px,70px);
-    grid-area: 1/1/7/7;
+    @include GraphikBold($dark, 65px, 70px);
+    grid-area: 1/2/8/11;
     display: inline-grid;
   }
   &-text {
-    @include GraphikReg($dark,25px,35px);
-    grid-area: 10/1/13/6;
+    @include GraphikReg($dark, 25px, 35px);
+    grid-area: 9/2/14/10;
     display: inline-grid;
   }
   span {
-    @include GraphikReg($dark,15px,25px);
-    grid-area: 19/1/20/5;
+    @include GraphikReg($dark, 15px, 25px);
+    grid-area: 19/2/20/8;
     display: inline-grid;
   }
 
   .buttons {
     display: flex;
     gap: 10px;
-    grid-area: 16/1/18/5;
+    grid-area: 16/2/18/7;
     > .btn {
       padding: 20px 35px;
     }
   }
-  img{
-    grid-area: 3/12/21/21;
+  img {
+    grid-area: 3/10/21/21;
   }
 }
 
@@ -97,7 +98,7 @@
     &-text {
       width: 60%;
       text-align: center;
-      @include GraphikBold($dark,50px,60px);
+      @include GraphikBold($dark, 50px, 60px);
     }
   }
 }
@@ -105,43 +106,44 @@
 .benefits {
   display: grid;
   grid-template: repeat(4, 1fr) / 0fr 0fr;
-  padding: 100px 75px;
+  padding: 100px 0;
   justify-content: center;
   align-items: center;
-  row-gap: 250px;
-  column-gap: 150px;
+  row-gap: 200px;
+  column-gap: 100px;
   &-text {
     @include flex(flex-start, flex-start, 30px);
     flex-direction: column;
     .title {
-      @include GraphikBold($dark,50px,60px);
-      width: 80%;
+      @include GraphikBold($dark, 50px, 60px);
     }
     .subtitle {
-      @include GraphikReg($dark,20px,30px);
-      width: 81%;
+      @include GraphikReg($dark, 20px, 30px);
     }
     .link {
-      @include GraphikBold($dark,20px,30px);
+      @include GraphikBold($dark, 20px, 30px);
     }
   }
   .benefits-gif {
     .gif {
-      width: 632px;
-      height: 632px;
+      min-width: 632px;
+      min-height: 632px;
+      width: 100%;
+      height: 100%;
     }
   }
 }
 
 .localize {
   background-color: $soft-white;
-  padding: 110px 75px;
+  padding: 110px 0;
   display: grid;
   grid-template: repeat(3, 0fr) / repeat(3, 1fr);
   justify-items: center;
   row-gap: 78px;
+  column-gap: 100px;
   &-title {
-    @include GraphikBold($dark,50px,60px);
+    @include GraphikBold($dark, 50px, 60px);
     text-align: center;
     align-self: center;
     grid-area: 1/1/1/4;
@@ -149,38 +151,38 @@
   .card {
     @include flex(center, center, 25px);
     flex-direction: column;
-    width: 50%;
     &-title {
-      @include GraphikBold($dark,25px,none);
+      @include GraphikBold($dark, 25px, none);
     }
     &-subtitle {
-      @include GraphikReg($dark,18px,25px);
+      @include GraphikReg($dark, 18px, 25px);
       text-align: center;
     }
   }
 }
 
 .boost {
-  padding: 150px 0;
+  padding: 120px 0;
   &-title {
-    @include GraphikBold($dark,60px,60px);
+    @include GraphikBold($dark, 50px, 60px);
     margin-bottom: 90px;
-    margin-left: 145px;
+    text-align: center;
   }
   .cards {
     @include flex(space-around, center, 0);
+    width: 100%;
     .card {
-      width: 20%;
+      width: 30%;
       @include flex(center, flex-start, 40px);
       flex-direction: column;
       &-img {
         height: 200px;
       }
       &-title {
-        @include GraphikBold($dark,30px,40px);
+        @include GraphikBold($dark, 30px, 40px);
       }
       &-text {
-        @include GraphikReg($dark,20px,30px);
+        @include GraphikReg($dark, 20px, 30px);
       }
       &-link {
         text-decoration: underline;
@@ -194,13 +196,12 @@
   padding: 50px 0;
   @include flex(space-around, center, 0);
   &-info {
-    width: 42%;
     .text {
-      @include GraphikReg($dark,30px,40px);
+      @include GraphikReg($dark, 30px, 40px);
       margin-bottom: 20px;
     }
     .subtext {
-      @include GraphikReg($dark,15px,25px);
+      @include GraphikReg($dark, 15px, 25px);
       margin-bottom: 10px;
     }
   }
@@ -210,10 +211,9 @@
   background-color: $brown;
   @include flex(space-around, center, 0);
   padding: 90px 0;
+  width: 100%;
   &-title {
-    @include GraphikBold($dark,35px,50px);
-    width: 32%;
-    text-align: center;
+    @include GraphikBold($dark, 35px, 50px);
   }
   .rating {
     @include flex(center, center, 70px);
@@ -225,15 +225,13 @@
 .integrate {
   @include flex(center, center, 40px);
   flex-direction: column;
-  padding: 165px 0;
+  padding: 120px 0;
   &-title {
-    @include GraphikBold($dark,65px,75px);
-    width: 40%;
+    @include GraphikBold($dark, 65px, 75px);
     text-align: center;
   }
   &-subtitle {
-    @include GraphikReg($dark,25px,30px);
-    width: 27%;
+    @include GraphikReg($dark, 25px, 30px);
     text-align: center;
   }
   > .btn {
@@ -243,44 +241,43 @@
 
 .localization {
   background-color: $orange-light;
-  @include flex(center, center, 50px);
-  padding-top: 119px;
-  padding-bottom: 161px;
+  @include flex(center, center, 0px);
+  padding: 140px 0;
   flex-direction: column;
   &-title {
-    @include GraphikBold($dark,65px,75px);
+    @include GraphikBold($dark, 65px, 75px);
     text-align: center;
-    width: 40%;
+    margin-bottom: 29px;
   }
   &-subtitle {
-    @include GraphikReg($dark,20px,30px);
-    text-align: center;
+    @include GraphikReg($dark, 20px, 30px);
+    margin-bottom: 54px;
   }
 }
 
 .footer {
   .first {
-    @include flex(center, flex-start, 0);
+    @include flex(space-around, flex-start, 0);
     padding: 95px 0;
     &-info {
       @include flex(center, flex-start, 25px);
       flex-direction: column;
       > .title {
-        @include GraphikBold($dark,40px,50px);
+        @include GraphikBold($dark, 40px, 50px);
       }
       > .text {
-        @include GraphikReg($dark,20px,30px);
-        width: 50%;
+        @include GraphikReg($dark, 20px, 30px);
       }
       > .link {
-        @include GraphikBold($dark,20px,30px);
+        @include GraphikBold($dark, 20px, 30px);
       }
     }
     &-nav {
-      @include flex(center, flex-start, 200px);
+      @include flex(space-between, flex-start, 0);
+      width: 60%;
       .column {
         > .title {
-          @include GraphikBold($dark,20px,25px);
+          @include GraphikBold($dark, 20px, 25px);
           margin-bottom: 21px;
           margin-left: 15px;
         }
@@ -288,7 +285,7 @@
           @include flex(center, flex-start, 5px);
           flex-direction: column;
           .menu-item {
-            @include GraphikReg($dark,15px,15px);
+            @include GraphikReg($dark, 15px, 15px);
             padding: 10px 15px;
           }
         }
@@ -303,13 +300,13 @@
     .brand {
       @include flex(center, center, 15px);
       &-text {
-        @include GraphikReg($dark,12px,15px);
+        @include GraphikReg($dark, 12px, 15px);
       }
     }
     .rights {
       margin-right: 76px;
       &-text {
-        @include GraphikReg($dark,12px,15px);
+        @include GraphikReg($dark, 12px, 15px);
       }
     }
   }
